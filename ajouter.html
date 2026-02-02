@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fun Facts — Ajouter</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>Ajouter ➕</h1>
+        <p class="sub">Ajoute tes propres fun facts (enregistrés localement).</p>
+      </div>
+
+      <div class="actions">
+        <a class="btn small" href="index.html">🏠 Retour</a>
+        <button class="btn small" id="themeBtn">🌙</button>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a class="btn small" href="index.html">🏠 Tous</a>
+      <a class="btn small" href="favoris.html">⭐ Favoris</a>
+      <a class="btn small" href="ajouter.html">➕ Ajouter</a>
+    </nav>
+
+    <section class="panel">
+      <label class="label">Texte</label>
+      <textarea class="input" id="newText" placeholder="Ex: Les pieuvres ont trois cœurs…" maxlength="220"></textarea>
+      <div style="margin-top:6px; color: var(--muted); font-size:12px;" id="charCount">0/220</div>
+
+      <div style="height:10px"></div>
+
+      <label class="label">Catégorie</label>
+      <select class="input" id="newCat"></select>
+
+      <div style="height:12px"></div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button class="btn" id="saveFact">✅ Enregistrer</button>
+        <button class="btn" id="resetCustom" title="Supprime les facts ajoutés à la main">🧹 Effacer mes ajouts</button>
+      </div>
+    </section>
+
+    <footer>
+      <div>Tu peux ensuite voir tes ajouts sur la page “Tous”.</div>
+      <div>Astuce : garde tes catégories cohérentes.</div>
+    </footer>
+  </div>
+
+  <script type="module" src="assets/js/app-ajouter.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fun Facts — Favoris</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <h1>Favoris ⭐</h1>
+        <p class="sub">Uniquement tes fun facts favoris.</p>
+      </div>
+
+      <div class="actions">
+        <span class="pill" id="countPill">0 favoris</span>
+        <a class="btn small" href="ajouter.html">➕ Ajouter</a>
+        <button class="btn small" id="themeBtn">🌙</button>
+      </div>
+    </header>
+
+    <nav class="nav">
+      <a class="btn small" href="index.html">🏠 Tous</a>
+      <a class="btn small" href="favoris.html">⭐ Favoris</a>
+      <a class="btn small" href="ajouter.html">➕ Ajouter</a>
+    </nav>
+
+    <main class="grid" id="grid"></main>
+
+    <footer>
+      <div>Si tu enlèves une ⭐ ici, ça la retire partout.</div>
+      <div>Les favoris restent sur ce navigateur.</div>
+    </footer>
+  </div>
+
+  <script type="module" src="assets/js/app-favoris.js"></script>
+</body>
+</html>
