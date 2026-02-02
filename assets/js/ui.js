@@ -61,6 +61,8 @@ export function renderFacts({ grid, facts, favsSet, onChange }) {
   facts.forEach(f => {
     const card = document.createElement("article");
     card.className = "card";
+    card.dataset.factId = f.id; // ✅ pour Random scroll sans afficher l'id
+
     const isFav = favsSet.has(f.id);
 
     card.innerHTML = `
@@ -75,7 +77,6 @@ export function renderFacts({ grid, facts, favsSet, onChange }) {
 
       <div class="cardFooter">
         <div class="meta">
-          <span>🆔 ${escapeHTML(f.id)}</span>
           ${f.id.startsWith("c_") ? `<span>📝 ajouté</span>` : `<span>📚 base</span>`}
         </div>
         <button class="btn small" title="Copier ce fun fact">📋 Copier</button>

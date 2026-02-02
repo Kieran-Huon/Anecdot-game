@@ -294,3 +294,26 @@ footer{
 }
 a{ color: var(--accent); text-decoration:none; }
 a:hover{ text-decoration:underline; }
+
+
+/* --- Fix Select / Options (évite le dropdown tout blanc) --- */
+:root { color-scheme: dark; }
+[data-theme="light"] { color-scheme: light; }
+
+/* Le select lui-même */
+.field select,
+.input {
+  background: transparent;
+}
+
+/* Les options (fonctionne sur beaucoup de navigateurs) */
+select option {
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Sur certains Chrome/Windows, ça aide aussi */
+select {
+  background-color: var(--bg);
+  color: var(--text);
+}

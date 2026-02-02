@@ -75,12 +75,12 @@ randomBtn.addEventListener("click", () => {
   setTimeout(() => {
     const after = getFilteredFacts();
     const pick = pickRandom(after);
-    const card = [...document.querySelectorAll(".card")].find(el => el.textContent.includes(`🆔 ${pick.id}`));
+    const card = document.querySelector(`[data-fact-id="${pick.id}"]`);
     if (card) {
-      card.scrollIntoView({ behavior: "smooth", block: "center" });
-      card.animate([{ transform: "scale(1)" }, { transform: "scale(1.02)" }, { transform: "scale(1)" }], { duration: 520 });
+        card.scrollIntoView({ behavior: "smooth", block: "center" });
+        card.animate([{ transform: "scale(1)" }, { transform: "scale(1.02)" }, { transform: "scale(1)" }], { duration: 520 });
     }
-  }, 80);
+}, 80);
 });
 
 rerender();
