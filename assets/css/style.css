@@ -296,24 +296,82 @@ a{ color: var(--accent); text-decoration:none; }
 a:hover{ text-decoration:underline; }
 
 
-/* --- Fix Select / Options (évite le dropdown tout blanc) --- */
-:root { color-scheme: dark; }
-[data-theme="light"] { color-scheme: light; }
+/* --- Custom dropdown (select stylé) --- */
+.dd { position: relative; }
 
-/* Le select lui-même */
-.field select,
-.input {
+.ddBtn{
+  width: 100%;
+  border: 0;
   background: transparent;
+  color: var(--text);
+  font-size: 14px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  cursor:pointer;
+  padding: 0; /* le .field gère déjà le padding */
 }
 
-/* Les options (fonctionne sur beaucoup de navigateurs) */
-select option {
-  background: var(--bg);
-  color: var(--text);
+.ddChevron{
+  color: var(--muted);
+  font-size: 14px;
+  margin-left: 6px;
 }
 
-/* Sur certains Chrome/Windows, ça aide aussi */
-select {
-  background-color: var(--bg);
+.ddMenu{
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  top: calc(100% + 8px);
+  z-index: 20;
+
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(10,18,40,.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+
+  padding: 8px;
+  display: none;
+  max-height: 280px;
+  overflow: auto;
+}
+
+[data-theme="light"] .ddMenu{
+  background: rgba(255,255,255,.85);
+}
+
+.dd.open .ddMenu{ display:block; }
+
+.ddItem{
+  width: 100%;
+  text-align:left;
+  border: 1px solid transparent;
+  background: transparent;
   color: var(--text);
+  padding: 10px 12px;
+  border-radius: 12px;
+  cursor:pointer;
+  font-size: 14px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.ddItem:hover{
+  background: rgba(122,167,255,.12);
+  border-color: rgba(122,167,255,.25);
+}
+
+.ddItem[aria-selected="true"]{
+  background: rgba(122,167,255,.18);
+  border-color: rgba(122,167,255,.45);
+}
+
+.ddMenu::-webkit-scrollbar{ width: 10px; }
+.ddMenu::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.12);
+  border-radius: 999px;
 }

@@ -34,10 +34,23 @@
         <input id="search" placeholder="Rechercher (ex: vénus, cerveau, Japon…)" autocomplete="off" />
       </div>
 
-      <div class="field">
+      <!-- <div class="field">
         <span class="icon">🏷️</span>
         <select id="category"></select>
-      </div>
+      </div> -->
+      <div class="field dd" id="catDD">
+  <span class="icon">🏷️</span>
+  <button class="ddBtn" id="categoryBtn" type="button">
+    <span id="categoryLabel">Toutes</span>
+    <span class="ddChevron">▾</span>
+  </button>
+
+  <div class="ddMenu" id="categoryMenu" role="listbox" aria-label="Catégories"></div>
+
+  <!-- input caché (pour garder une “valeur” simple côté JS) -->
+  <input type="hidden" id="category" value="Toutes" />
+</div>
+
 
       <button class="btn" id="showFavBtn">⭐ Favoris</button>
     </section>
